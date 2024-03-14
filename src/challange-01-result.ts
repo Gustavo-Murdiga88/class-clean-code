@@ -42,12 +42,11 @@ export default async function getUserFromGithub(req, res) {
 
   const categoryWhereUserIs = categoryOfUserOnGithubOrdered.find(category => user.followers > category.followers)
 
-  const result = {
+
+  return {
     user,
     category: categoryWhereUserIs?.title
   }
-
-  return result
 }
 
 getUserFromGithub({
